@@ -26,25 +26,37 @@ public class Deck {
         System.out.println("Enter players details");
         if (numberOfPlayers <= 4 && numberOfPlayers >2) {
             for (int i = 0; i < numberOfPlayers; i++) {
-                    System.out.println("Enter first name");
-                    String fn = inp.nextLine();
-                    System.out.println("Enter Last name");
-                    String ln = inp.nextLine();
-                    Player player = new Player(fn, ln);
-                    playerList.add(player);
-                    for (int j = 0; j < playerList.size(); j++) {
-                        System.out.println(playerList.get(j));
-                    }
+                System.out.println("Enter first name");
+                String fn = inp.nextLine();
+                System.out.println("Enter Last name");
+                String ln = inp.nextLine();
+                Player player = new Player(fn, ln);
+                playerList.add(player);
+                for (int j = 0; j < playerList.size(); j++) {
+                    System.out.println(playerList.get(j));
                 }
+            }
 
         } else {
             System.out.println("More than 4 player not allowed");
         }
+        public void playerOrder(int numberOfPlayers){
+            System.out.println("Enter Player Order");
+            for (int i=0;i<numberOfPlayers;i++){
+                System.out.println("Player Order:" +(i+1));
+                int turn = inp.nextInt();
+            }
+        }
     }
     public static void main(String[] args) {
-        addPlayer(3);
+        Deck deck = new Deck();
+        System.out.println("Enter number of players");
+        int number=deck.nextInt();
+        deck.assignCard();
+        deck.addPlayer(number);
+        deck.playerOrder(number);
+
     }
 }
-
 
 
