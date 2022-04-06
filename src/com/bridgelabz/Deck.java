@@ -21,10 +21,11 @@ public class Deck {
                 cardCombo[i][j] = suit[i] + rank[j];
             }
         }
+
     }
     public static void addPlayer(int numberOfPlayers) {
         System.out.println("Enter players details");
-        if (numberOfPlayers <= 4 && numberOfPlayers >2) {
+        if (numberOfPlayers <= 4 && numberOfPlayers > 2) {
             for (int i = 0; i < numberOfPlayers; i++) {
                 System.out.println("Enter first name");
                 String fn = inp.nextLine();
@@ -40,18 +41,19 @@ public class Deck {
         } else {
             System.out.println("More than 4 player not allowed");
         }
-        public void playerOrder(int numberOfPlayers){
+    }
+    public void playerOrder(int numberOfPlayers){
             System.out.println("Enter Player Order");
             for (int i=0;i<numberOfPlayers;i++){
                 System.out.println("Player Order:" +(i+1));
                 int turn = inp.nextInt();
             }
         }
-    }
+
     public static void main(String[] args) {
         Deck deck = new Deck();
         System.out.println("Enter number of players");
-        int number=deck.nextInt();
+        int number= inp.nextInt();
         deck.assignCard();
         deck.addPlayer(number);
         deck.playerOrder(number);
